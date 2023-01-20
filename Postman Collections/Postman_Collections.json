@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "2e5285fa-ef3d-4c82-a65a-79ab08b0391d",
+		"name": "Outfitness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Import Data",
+			"item": [
+				{
+					"name": "Import User",
+					"_postman_id": "f0c37109-9beb-4b54-b35b-99892a6ace12",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{url}}/api/import/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Import Products",
+					"_postman_id": "2a29d1fb-1c89-4f57-b387-191f0f07ebf6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{url}}/api/import/products"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "53a704c5-0ba5-4be6-89da-35805287e674"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login",
+					"_postman_id": "ef040894-0b27-4cd8-83db-6858d3974288",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Register Users",
+					"_postman_id": "931193e2-48fd-44da-9f7f-9f20d2e4f324",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nata\",\r\n    \"email\": \"nata2@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile",
+					"_postman_id": "085a13b7-f282-4379-a3c0-9e344f0c0c8f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODZjNTYxNGExZWRiYjNjYzhhMjg3MyIsImlhdCI6MTY3NDE2ODI3MCwiZXhwIjoxNjc2NzYwMjcwfQ.I_SZL0jVWOl7XZ-GofkXxLnnkJm7Qeh2ohWeD--UwYA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/users/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile",
+					"_postman_id": "95798ee4-1b27-4ca3-b650-03d35036ccbb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODZjNTYxNGExZWRiYjNjYzhhMjg3MyIsImlhdCI6MTY3NDE2ODI3MCwiZXhwIjoxNjc2NzYwMjcwfQ.I_SZL0jVWOl7XZ-GofkXxLnnkJm7Qeh2ohWeD--UwYA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6386c5614a1edbb3cc8a2872\",\r\n    \"name\": \"Admin\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/users/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"_postman_id": "68ce499b-df93-4b67-9675-09f19c5b2f81",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODZjNTYxNGExZWRiYjNjYzhhMjg3MiIsImlhdCI6MTY3NDE2OTIzMiwiZXhwIjoxNjc2NzYxMjMyfQ.i8rWX18qVQXA61YVUB2kfUM8rRdzYXmF1P14tv4XbwU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6386c5614a1edbb3cc8a2872\",\r\n    \"name\": \"Admin\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/users"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "bc5a35fb-9e85-47c9-9626-76c1d577d168"
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all products",
+					"_postman_id": "03b04200-6b09-42df-8138-5184c33ad742",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"_postman_id": "dfb72e1b-9fae-4be4-8cbe-b64550296118",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/products/6387b4dcdfb4a55bd7878247"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"_postman_id": "d4111740-ec45-4e0c-92f8-c97d9da01f95",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODZjNTYxNGExZWRiYjNjYzhhMjg3MyIsImlhdCI6MTY3NDE2ODI3MCwiZXhwIjoxNjc2NzYwMjcwfQ.I_SZL0jVWOl7XZ-GofkXxLnnkJm7Qeh2ohWeD--UwYA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Short Tie Dye Lila 1\",\r\n    \"image\": [\r\n      \"https://res.cloudinary.com/dmkbissq5/image/upload/v1669779011/outfitness/shorttiedye_morado_2_eq070z.jpg\",\r\n      \"https://res.cloudinary.com/dmkbissq5/image/upload/v1669779011/outfitness/shorttiedye_morado_1_qpk3rt.jpg\"\r\n    ],\r\n    \"description\":\r\n      \"Shorts hechos para que entrenes comoda.\",\r\n    \"price\": 75000,\r\n    \"countInStock\": 0,\r\n    \"rating\": 5,\r\n    \"numReviews\": 0\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"_postman_id": "705bc718-2746-4779-8f65-f5863631dde3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/api/products/6387b4dcdfb4a55bd7878247"
+					},
+					"response": []
+				},
+				{
+					"name": "Review",
+					"_postman_id": "8b5dac2c-d288-434b-a8d5-80548eea70a0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{url}}/api/products/6387b4dcdfb4a55bd7878247/review"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products without pagination",
+					"_postman_id": "3780e99e-77a0-45e8-8dc4-6d1a251a5ce7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/products/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Import Products",
+					"_postman_id": "aa3d290a-7990-4d82-93b7-dda9c180a949",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{url}}/api/import/products"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "69cc443f-ebae-49df-9666-24d3ba07635e"
+		},
+		{
+			"name": "Orders",
+			"item": [],
+			"_postman_id": "1c0b7343-6ca1-4c2b-ae00-cddeb0b8e2dd"
+		}
+	]
+}
